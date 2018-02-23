@@ -1,4 +1,3 @@
-
 void Main()
 {
 	inttny.Tools.Threads.Task newTask = new inttny.Tools.Threads.Task();
@@ -12,7 +11,8 @@ void Main()
 		Console.WriteLine("I M wrtoen by another thread too, but defined in main method."); 
 	};
 			
-	//the task will be started immediately by executed the following statement, because there are 10 threads running default and all threads are idle
+	//the task will be started immediately by executed the following statement
+	//because there are 10 threads running default and all threads are idle
             
         //if u want to increase/decrease the number of running threads, call the function below:
         //ManagedThreadPool.SetRunningThreads(8);
