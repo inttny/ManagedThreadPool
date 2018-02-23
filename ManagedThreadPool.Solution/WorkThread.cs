@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace inttny.Tools
+namespace inttny.Tools.Threads
 {
     public class WorkThread
     {

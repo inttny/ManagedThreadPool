@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
 
-namespace inttny.Tools.Tests
+namespace inttny.Tools.Threads.Tests
 {
     [TestClass]
     public class Test2AppendTask

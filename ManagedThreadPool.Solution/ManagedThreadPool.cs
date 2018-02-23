@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace inttny.Tools
+namespace inttny.Tools.Threads
 {
     public static class ManagedThreadPool
     {
@@ -23,7 +23,7 @@ namespace inttny.Tools
             if (targetThread.Closing)//指示该线程需要关闭
             {
                 lock (LockObj) BusyThreads.Remove(targetThread);
-                targetThread.Close();
+                targetThread = null;//释放资源
                 return;
             }
 
