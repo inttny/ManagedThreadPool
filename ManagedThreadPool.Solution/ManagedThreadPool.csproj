@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>ManagedThreadPool</AssemblyName>
+    <RootNamespace>inttny.Tools</RootNamespace>
+    <AssemblyVersion>0.1.0.13</AssemblyVersion>
+    <FileVersion>0.1.0.13</FileVersion>
+    <Version>0.1.0</Version>
+    <Authors>inttny</Authors>
+    <Company />
+    <SignAssembly>false</SignAssembly>
+    <Product>ManagedThreadPool v0.1.0 beta</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.3.1" />
+  </ItemGroup>
+
+</Project>
