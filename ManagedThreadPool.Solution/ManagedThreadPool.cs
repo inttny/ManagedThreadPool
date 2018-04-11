@@ -28,7 +28,7 @@ namespace inttny.Tools.Threads
             }
 
             Task nextTask;
-            lock (LockObj) { nextTask = TaskQueue.Dequeue(); }
+            lock (LockObj) { nextTask = TaskQueue.Count == 0 ? null : TaskQueue.Dequeue(); }
             if (nextTask == null)//队列已空，将线程从忙碌列表移至空闲列表
             {
                 lock (LockObj)

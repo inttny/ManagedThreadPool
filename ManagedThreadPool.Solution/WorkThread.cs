@@ -10,7 +10,7 @@ namespace inttny.Tools.Threads
         /// 指示该线程是否正在关闭
         /// true - 指示当运行完当前任务后触发FinishTask事件应该将此线程关闭
         /// </summary>
-        public bool Closing { get; private set; }
+        public bool Closing { get; private set; } = false;
         Thread InnerThread;
         Task RunningTask = null;
         //初始化为没信号，空闲线程时阻塞线程以免消耗CPU资源
@@ -32,9 +32,10 @@ namespace inttny.Tools.Threads
                 {
                     RunningTask.Start();
                     RunningTask = null;
-                    FinishTask();
                 }
+                //先设置为无信号量，使线程阻塞。此处必须在FinishTask()前，否则在FinishTask事件执行后此处会覆盖掉正确的信号量
                 manualResetEvent.Reset();
+                new System.Threading.Tasks.Task(FinishTask).Start();
             }
         }
         /// <summary>
@@ -55,7 +56,7 @@ namespace inttny.Tools.Threads
         /// </summary>
         internal void Close()
         {
-            Closing = false;
+            Closing = true;
             manualResetEvent.Set();
         }
     }
